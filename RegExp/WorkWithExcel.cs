@@ -53,5 +53,10 @@ namespace RegExp
             excel.Quit();
             return output;
         }
+
+        public static void putColumns(string path, int page, List<string> columns, List<List<string>> data)
+        {
+
+        }
     }
 }
