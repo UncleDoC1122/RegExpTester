@@ -34,11 +34,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 640);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(12, 608);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(1238, 23);
+            this.button1.Size = new System.Drawing.Size(1238, 55);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Обработать";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -47,7 +48,8 @@
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1238, 622);
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(1238, 325);
             this.textBox1.TabIndex = 1;
             // 
             // Form1

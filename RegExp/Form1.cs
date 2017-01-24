@@ -21,9 +21,10 @@ namespace RegExp
         {
             List<string> output = WorkWithExcel.parseExcel("D:\\Users\\DSIYANCHEV\\Desktop\\Нормализация таблиц\\Авто\\ADDRSTREET - возможна автоматическая обработка.xlsx", 1, "AG");
 
-            for (int i = 0; i < output.Count; i ++)
+            for (int i = 0; i < 100; i ++)
             {
-                textBox1.Text += output[i];
+                textBox1.Text += output[i] + "\r\n";
+                
             }
         }
     }

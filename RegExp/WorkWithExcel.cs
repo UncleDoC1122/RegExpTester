@@ -35,13 +35,22 @@ namespace RegExp
 
             int i = 1; // итератор (номер строки)
             string cell = column + i.ToString(); // ячейка, откуда берется информация 
-            while ((excelRange = excelWorksheet.get_Range(cell, Type.Missing)).ToString().Equals("") == false) // пока ячейка не пустая
+            while ((excelRange = excelWorksheet.get_Range(cell, Type.Missing)).ToString().Length != 0) // пока ячейка не пустая
             {
-                output.Add(excelRange.Value2.ToString());
-                i++;
-                cell = column + i.ToString();
-            } 
+                try
+                {
+                    output.Add(excelRange.Value2.ToString());
+                    i++;
+                    cell = column + i.ToString();
+                }
+                catch
+                {
+                    break;
+                }
+                
+            }
 
+            excel.Quit();
             return output;
         }
     }
