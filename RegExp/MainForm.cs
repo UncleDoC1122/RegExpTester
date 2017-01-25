@@ -27,5 +27,12 @@ namespace RegExp
                 filepath = ofd.FileName;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<string> tmp = new List<string>();
+            tmp.Add(textBox1.Text);
+            List<List<string>> outp = RegExp.parseAddress(tmp);
+        }
     }
 }
