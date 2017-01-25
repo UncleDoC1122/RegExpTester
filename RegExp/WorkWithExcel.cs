@@ -16,7 +16,7 @@ namespace RegExp
         private static Excel.Worksheet excelWorksheet;
         private static Excel.Range excelRange;
 
-        public static List<string> parseExcel(string path, int page, string column)
+        public static List<string> readAllLines(string path, int page, string column)
         {
             List<string> output = new List<string>();
 
@@ -56,7 +56,31 @@ namespace RegExp
 
         public static void putColumns(string path, int page, List<string> columns, List<List<string>> data)
         {
+            excel = new Excel.Application(); // запуск приложения 
 
+            excel.Visible = true; // окно видимо
+
+            excelWorkbook = excel.Workbooks.Open(path, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                Type.Missing, Type.Missing); // открыть книгу
+
+            excelSheets = excelWorkbook.Worksheets; //выгрузить листы 
+
+            excelWorksheet = (Excel.Worksheet)excelSheets.get_Item(page); //получение ссылки на лист
+
+            for (int i = 0; i < columns.Count; i ++)
+            {
+                for (int j = 0; j < data[i].Count; j ++)
+                {
+                    string cell = columns[i] + (j + 1).ToString();
+                    excelRange = excelWorksheet.get_Range(cell, Type.Missing);
+                    excelRange.Value2 = data[i][j];
+                }
+            }
+
+            excelWorkbook.Save();
+            excel.Quit();
         }
     }
 }

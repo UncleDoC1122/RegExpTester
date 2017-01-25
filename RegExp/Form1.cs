@@ -19,13 +19,15 @@ namespace RegExp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<string> output = WorkWithExcel.parseExcel("D:\\Users\\DSIYANCHEV\\Desktop\\Нормализация таблиц\\Авто\\ADDRSTREET - возможна автоматическая обработка.xlsx", 1, "AG");
+            List<string> cols = new List<string>();
 
-            for (int i = 0; i < 100; i ++)
-            {
-                textBox1.Text += output[i] + "\r\n";
-                
-            }
+            List<List<string>> data = new List<List<string>>();
+
+            cols.Add("A");
+            data.Add(new List<string>());
+            data[0].Add("1");
+            data[0].Add("Test");
+            WorkWithExcel.putColumns("D:\\Test.xlsx", 1, cols, data);
         }
     }
 }
