@@ -12,14 +12,20 @@ namespace RegExp
 {
     public partial class MainForm : Form
     {
+        private string filepath;
         public MainForm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                textBox1.Text = ofd.FileName;
+                filepath = ofd.FileName;
+            }
         }
     }
 }
