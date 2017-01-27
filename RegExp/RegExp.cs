@@ -52,25 +52,12 @@ namespace RegExp
                 List<string> addable = new List<string>(); // список вывода
                 string[] tmp = input[i].Split(','); // разделить строку по запятым
 
-                for (int j = 0; j < tmp.Length; j ++) // перебор всех токенов строки
+                for (int j = 0; j < tmp.Length; j ++)
                 {
-
-                    bool flag = false; // флаг для обозначения элемента, который не определился
-                    for (int k = 0; k < tokens.Count; k ++) // перебор по списку токенов
-                    {
-                        Match match = tokens[k].Match(tmp[j]);
-                        if (match.Length > 0)
-                        {
-                            output[i].Add(tmp[j]);
-                            flag = true;
-                        }
-                        if (flag == true) break;
-                       
-                    }
-
+                    Console.Write(tmp[j] + " | ");
                 }
-                
-                
+
+                Console.Write("\n");
             }
 
 
